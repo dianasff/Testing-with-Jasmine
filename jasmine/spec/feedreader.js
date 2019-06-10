@@ -107,7 +107,7 @@ $(function() {
             let contentOne,contentTwo;
             //Callbacks should be used to ensure that feeds are loaded before they are tested
             beforeEach(done=>{
-                //FIrst feed 
+                //First feed 
                 loadFeed(0,function(){
                     contentOne= $('.feed').html();
                     //second feed 
@@ -118,11 +118,11 @@ $(function() {
                 });
                 
             });    
-                //it makes a simple test, comparing two different contents.The answer should be false, because it should be different.
-                it('the content actually changes', function() {
-                    expect(contentOne === contentTwo).toBe(false);
+            //it makes a simple test, comparing two different contents.The answer should be false, because it should be different.
+            it('the content actually changes', function() {
+                expect(contentOne === contentTwo).toBe(false);
 
-                });
+            });
 
     });
 }());
