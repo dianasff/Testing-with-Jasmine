@@ -25,7 +25,7 @@ $(function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
-        /* TODO: Write a test that loops through each feed
+        /* Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
@@ -38,7 +38,7 @@ $(function() {
 
         
         
-        /* TODO: Write a test that loops through each feed
+        /* Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
@@ -110,19 +110,19 @@ $(function() {
                 //FIrst feed 
                 loadFeed(0,function(){
                     contentOne= $('.feed').html();
-                    done();
+                    //second feed 
+                    loadFeed(1,function(){
+                        contentTwo= $('.feed').html();
+                        done();
+                    });
                 });
-                //second feed 
-                loadFeed(1,function(){
-                    contentTwo= $('.feed').html();
-                    done();
-                });
+                
+            });    
                 //it makes a simple test, comparing two different contents.The answer should be false, because it should be different.
                 it('the content actually changes', function() {
                     expect(contentOne === contentTwo).toBe(false);
 
                 });
-            });
 
     });
 }());
